@@ -2,9 +2,10 @@
 
 低侵入性的flutter屏幕适配方案 / Low-invasive flutter screen adaptation solution
 
-## Screen Shot
-![ScreenShot](https://github.com/hwh97/screenshot_res/blob/master/flutter_screen_adapter/s1.jpeg)
-![ScreenShot](https://github.com/hwh97/screenshot_res/blob/master/flutter_screen_adapter/s2.jpeg)
+## Screenshot
+
+| <img src="https://github.com/hwh97/screenshot_res/blob/master/flutter_screen_adapter/s1.jpeg" width="340px" alt="screenshot"> | <img src="https://github.com/hwh97/screenshot_res/blob/master/flutter_screen_adapter/s2.jpeg" width="340px" alt="screenshot"> |
+|:-----------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------:|
 
 ## Usage
 
