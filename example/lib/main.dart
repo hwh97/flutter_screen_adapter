@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screen_adapter/flutter_screen_adapter.dart';
 
 void main() {
-  ScreenUtil.init(designWidth: 375);
-  runAdapterApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      builder: mediaQueryBuilder,
+      debugShowCheckedModeBanner: false,
+      builder: (context, child) => screenAdapterBuilder(
+        child: child,
+        designSize: const Size(375, 812),
+        tabletDesignSize: const Size(768, 1024),
+      ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -54,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               color: Colors.blueAccent,
-              width: 100,
+              width: 760,
               height: 100,
               alignment: Alignment.center,
               child: const Text(
@@ -73,6 +77,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.arrow_forward_rounded),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return const MyHomePage(title: "New Page");
+              },
+            ));
+          }),
     );
   }
 }

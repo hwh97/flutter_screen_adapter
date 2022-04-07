@@ -1,3 +1,8 @@
+## 0.0.2
+* replace WidgetsFlutterBinding with MediaQuery, which make it less invasive.
+* add tablet adapter
+* update the values of padding,viewInsets,viewPadding
+
 ## 0.0.1
 
 * initial release.
