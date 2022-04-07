@@ -15,7 +15,7 @@ Import package
 ```
 flutter_screen_adapter:
     git:
-    url: git@github.com:hwh97/flutter_screen_adapter.git 
+        url: git@github.com:hwh97/flutter_screen_adapter.git 
 ```
 ### Step2:
 Add builder to MaterialApp
