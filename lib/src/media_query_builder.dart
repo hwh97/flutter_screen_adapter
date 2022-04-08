@@ -67,19 +67,19 @@ class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
   /// new padding
   EdgeInsets get padding {
     final padding = MediaQuery.of(context).padding;
-    return padding / devicePixelRatioRatio;
+    return padding * devicePixelRatioRatio;
   }
 
   /// new viewInsets
   EdgeInsets get viewInsets {
     final viewInsets = MediaQuery.of(context).viewInsets;
-    return viewInsets / devicePixelRatioRatio;
+    return viewInsets * devicePixelRatioRatio;
   }
 
   /// new viewPadding
   EdgeInsets get viewPadding {
     final viewPadding = MediaQuery.of(context).viewPadding;
-    return viewPadding / devicePixelRatioRatio;
+    return viewPadding * devicePixelRatioRatio;
   }
 
   @override

@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Container(
               color: Colors.blueAccent,
-              width: 760,
+              width: 100,
               height: 100,
               alignment: Alignment.center,
               child: const Text(
