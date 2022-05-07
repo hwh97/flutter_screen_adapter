@@ -3,12 +3,12 @@ import 'dart:ui';
 import 'package:flutter/widgets.dart';
 
 Widget screenAdapterBuilder({
-  required Widget? child,
+  required WidgetBuilder? builder,
   required Size designSize,
   Size? tabletDesignSize,
 }) {
   return _MediaQueryBuilder(
-    child: child!,
+    builder: builder!,
     designSize: designSize,
     tabletDesignSize: tabletDesignSize,
   );
@@ -17,7 +17,8 @@ Widget screenAdapterBuilder({
 
 /// rewrite MediaQueryData
 class _MediaQueryBuilder extends StatefulWidget {
-  final Widget child;
+  final WidgetBuilder builder;
+
   /// The size of the device screen in the design draft
   final Size designSize;
 
@@ -26,7 +27,7 @@ class _MediaQueryBuilder extends StatefulWidget {
 
   const _MediaQueryBuilder({
     Key? key,
-    required this.child,
+    required this.builder,
     required this.designSize,
     this.tabletDesignSize,
   }) : super(key: key);
@@ -91,7 +92,7 @@ class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
         child: SizedBox(
           width: designWidth,
           height: scaleHeight,
-          child: widget.child,
+          child: widget.builder(context),
         ),
       ),
       data: MediaQuery.of(context).copyWith(

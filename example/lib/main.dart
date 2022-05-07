@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       builder: (context, child) => screenAdapterBuilder(
-        child: child,
+        builder: (context) => child!,
         designSize: const Size(375, 812),
         tabletDesignSize: const Size(768, 1024),
       ),

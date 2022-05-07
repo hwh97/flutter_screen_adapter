@@ -1,3 +1,6 @@
+## 0.0.4
+* replace WidgetBuilder with Widget
+
 ## 0.0.3
 * fix values of padding,viewInsets,viewPadding
 * update example
