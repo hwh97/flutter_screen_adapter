@@ -14,7 +14,6 @@ Widget screenAdapterBuilder({
   );
 }
 
-
 /// rewrite MediaQueryData
 class _MediaQueryBuilder extends StatefulWidget {
   final WidgetBuilder builder;
@@ -44,11 +43,15 @@ class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
 
   /// Design width
   double get designWidth {
-    final isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
-    var designWidth = isLandscape ? widget.designSize.height : widget.designSize.width;
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+    var designWidth =
+        isLandscape ? widget.designSize.height : widget.designSize.width;
 
     if (widget.tabletDesignSize != null && isTablet) {
-      designWidth = isLandscape ? widget.tabletDesignSize!.height : widget.tabletDesignSize!.width;
+      designWidth = isLandscape
+          ? widget.tabletDesignSize!.height
+          : widget.tabletDesignSize!.width;
     }
     return designWidth;
   }
@@ -63,7 +66,8 @@ class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
   double get scaleHeight => window.physicalSize.height / devicePixelRatio;
 
   /// devicePixelRatio Ratio
-  double get devicePixelRatioRatio => MediaQuery.of(context).devicePixelRatio / devicePixelRatio;
+  double get devicePixelRatioRatio =>
+      MediaQuery.of(context).devicePixelRatio / devicePixelRatio;
 
   /// new padding
   EdgeInsets get padding {
@@ -92,7 +96,9 @@ class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
         child: SizedBox(
           width: designWidth,
           height: scaleHeight,
-          child: widget.builder(context),
+          child: Builder(
+            builder: widget.builder,
+          ),
         ),
       ),
       data: MediaQuery.of(context).copyWith(
