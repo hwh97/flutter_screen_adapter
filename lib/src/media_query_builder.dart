@@ -14,6 +14,57 @@ Widget screenAdapterBuilder({
   );
 }
 
+/// utils
+class ScreenAdapterUtil {
+  ScreenAdapterUtil._();
+
+  static _MediaQueryBuilderState _getState(BuildContext context) {
+    final state = context.findAncestorStateOfType<_MediaQueryBuilderState>();
+    assert(state != null);
+    return state!;
+  }
+
+  static MediaQueryData originalMediaData(BuildContext context) {
+    return _getState(context).originalMediaData;
+  }
+
+  static bool isTablet(BuildContext context) {
+    return _getState(context).isTablet;
+  }
+
+  static double designWidth(BuildContext context) {
+    return _getState(context).designWidth;
+  }
+
+  static Size scaleSize(BuildContext context) {
+    return _getState(context).scaleSize;
+  }
+
+  static double scaleDevicePixelRatio(BuildContext context) {
+    return _getState(context).devicePixelRatio;
+  }
+
+  static double scaleHeight(BuildContext context) {
+    return _getState(context).scaleHeight;
+  }
+
+  static double devicePixelRatioRatio(BuildContext context) {
+    return _getState(context).devicePixelRatioRatio;
+  }
+
+  static EdgeInsets padding(BuildContext context) {
+    return _getState(context).padding;
+  }
+
+  static EdgeInsets viewInsets(BuildContext context) {
+    return _getState(context).viewInsets;
+  }
+
+  static EdgeInsets viewPadding(BuildContext context) {
+    return _getState(context).viewPadding;
+  }
+}
+
 /// rewrite MediaQueryData
 class _MediaQueryBuilder extends StatefulWidget {
   final WidgetBuilder builder;
@@ -36,6 +87,9 @@ class _MediaQueryBuilder extends StatefulWidget {
 }
 
 class _MediaQueryBuilderState extends State<_MediaQueryBuilder> {
+  /// Original data
+  MediaQueryData get originalMediaData => MediaQuery.of(context);
+
   /// Get is tablet
   bool get isTablet {
     return MediaQuery.of(context).size.shortestSide >= 550;

@@ -1,3 +1,6 @@
+## 0.0.6
+* add utils
+
 ## 0.0.5
 * fix bug 
 
